@@ -3,27 +3,27 @@ import face_recognition as fr
 font=cv2.FONT_HERSHEY_COMPLEX 
 
 
-MohFace=fr.load_image_file('C:/Users/NsrO/Documents/Python/demoimages/known/Belbekri Mohammed Bouziane.PNG')
+MohFace=fr.load_image_file('C:/Users/User/Documents/my.PNG')
 faceLoc=fr.face_locations(MohFace)[0]
 MohfaceEnc  = fr.face_encodings(MohFace)[0]
 
 
-donFace=fr.load_image_file('C:/Users/NsrO/Documents/Python/demoimages/known/Donald Trump.jpg')
+donFace=fr.load_image_file('C:/Users/User/Documents/Donald Trump.jpg')
 faceLoc=fr.face_locations(donFace)[0]
 DonfaceEnc  = fr.face_encodings(donFace)[0]
 
 
-NancyFace=fr.load_image_file('C:/Users/NsrO/Documents/Python/demoimages/known/Nancy Pelosi.jpg')
+NancyFace=fr.load_image_file('C:/Users/User/Documents/Nancy Pelosi.jpg')
 faceLoc=fr.face_locations(NancyFace)[0]
 NancyfaceEnc  = fr.face_encodings(NancyFace)[0] 
 
 
 
 KnownEncoding=[DonfaceEnc,NancyfaceEnc,MohfaceEnc]
-Names=['Donald Trump','Nancy Pelosi','Belbekri Mohammed Bouziane']
+Names=['Donald Trump','Nancy Pelosi','Me']
 
-
-Unknownface=fr.load_image_file('C:/Users/NsrO/Documents/Python/demoimages/unknown/u80.PNG')
+# Test
+Unknownface=fr.load_image_file('C:/Users/User/Documents/u80.PNG')
 UknfaceBGR=cv2.cvtColor(Unknownface,cv2.COLOR_BGR2RGB)
 fecaLocations=fr.face_locations(Unknownface)
 UknfaceEncs = fr.face_encodings(Unknownface,fecaLocations) 
